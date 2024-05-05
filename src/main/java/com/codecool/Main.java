@@ -1,6 +1,7 @@
 package com.codecool;
 
 import com.codecool.employee.*;
+import com.google.gson.Gson;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -24,5 +25,9 @@ public class Main {
         employeeList.forEach(kitchen::hireEmployee);
 
         kitchen.startShift();
+
+        // to potem
+        System.out.println(new Gson().toJson(new Student("Przemysław", 19)));
+        System.out.println(new Gson().fromJson("{\"name\":\"Przemysław\",\"age\":19}", Student.class));
     }
 }
